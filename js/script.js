@@ -43,6 +43,7 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
+// inserisco immagini arrey
 const imgBigContainer = document.querySelector('.img-big-container');
 
 for (let i = 0; i < items.length; i++) {
@@ -51,3 +52,75 @@ for (let i = 0; i < items.length; i++) {
     imgBigContainer.innerHTML += image;
 }
 
+
+// faccio in modo che solo una delle immagini sia attiva
+const imagesScrol = document.querySelectorAll('.img-big-container img');
+
+imagesScrol[0].classList.add('first', 'active');
+imagesScrol[imagesScrol.length - 1].classList.add('last');
+
+
+// attivo i bottoni
+const buttonUp = document.querySelector('.fa-arrow-alt-circle-up');
+const buttonDown = document.querySelector('.fa-arrow-alt-circle-down');
+
+buttonDown.addEventListener('click', function () {
+    const imageActiveDown = document.querySelector('.active');
+    
+  
+    let classesDown = imageActiveDown.classList;
+    
+    let last = false;
+    for (let index = 0; index < classesDown.length; index++) {
+      console.log(index, classesDown[index]);
+      if (classesDown[index] == 'last') {
+        // la variabile diventa vera  
+        last = true;
+      }
+    }
+
+    if (last == false) { //se non sono in last
+        imageActiveDown.classList.remove('active');
+        
+        //elemento successivo
+        const imgNextDown = imageActiveDown.nextElementSibling;
+        
+        imgNextDown.classList.add('active');
+        
+      } else { // se sono in last
+        buttonDown.classList.remove('able');
+      }
+    
+    });
+
+
+    
+    
+buttonUp.addEventListener('click', function () {
+    const imageActiveUp = document.querySelector('.active');
+    
+  
+    let classesUp = imageActiveUp.classList;
+    
+    let first = false;
+    for (let index = 0; index < classesUp.length; index++) {
+      console.log(index, classesUp[index]);
+      if (classesUp[index] == 'last') {
+         
+        first = true;
+      }
+    }
+
+    if (first == false) { 
+        imageActiveUp.classList.remove('active');
+        
+        
+        const imgNextUp = imageActiveUp.previousElementSibling;
+        
+        imgNextUp.classList.add('active');
+        
+      } else { // 
+        buttonUp.classList.remove('able');
+      }
+    
+});
