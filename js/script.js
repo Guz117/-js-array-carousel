@@ -1,5 +1,6 @@
+/* 
 Consegna:
-/*Dati tre array contenenti:
+Dati tre array contenenti:
  - una lista ordinata di 5 immagini,
  - una lista ordinata dei relativi 5 luoghi e
  - una lista di 5 news,
@@ -42,7 +43,11 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-const imgBigContainer = document.querySelector(.img-big-container);
+const imgBigContainer = document.querySelector('.img-big-container');
 
+for (let i = 0; i < items.length; i++) {
+    let image = `<img src="${items[i]}" alt="">`;
 
+    imgBigContainer.innerHTML += image;
+}
 
