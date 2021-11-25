@@ -105,7 +105,7 @@ buttonUp.addEventListener('click', function () {
     let first = false;
     for (let index = 0; index < classesUp.length; index++) {
       console.log(index, classesUp[index]);
-      if (classesUp[index] == 'last') {
+      if (classesUp[index] == 'first') {
          
         first = true;
       }
