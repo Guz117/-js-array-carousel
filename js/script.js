@@ -43,39 +43,36 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
-// const itemsContainer = document.querySelector('.img-big-container');
-// const thumbsContainer = document.querySelector('.img-little-container');
+const bigContainer = document.querySelector('.img-big-container');
+const littleContainer = document.querySelector('.img-little-container');
 
-// for (let i = 0; i < items.length; i++) {
+for (let i = 0; i < items.length; i++) {
 
     
-//     let classElement = '';
-//     if (i == 0) {
-//         classElement = 'first active';
-//     } else if (i == items.length - 1) { 
-//         classElement = 'last';
-//     }
+    let classElement = '';
+    if (i == 0) {
+        classElement = 'first active';
+    } else if (i == items.length - 1) { 
+        classElement = 'last';
+    }
 
-//     const tag = `
-//         <div class="img-big-container ${classElement}">
-//             <img src="${items[i]}" alt="">
-//             <div class ="text">
-//             <h3>${title[i]}</h3>
-//             <p>${text[i]}</p>
-//         </div>
-//     `;
-//     const tagThumb = `
-//         <div class="img-little-container ${classElement}">
-//              <img src="${items[i]}" alt="">
-//         </div>
-//     `;
+    const tagBig = `
+        <div class="immage-cities ${classElement}">
+            <img src="${items[i]}" alt="">
+            <div class ="text">
+            <h3>${title[i]}</h3>
+            <p>${text[i]}</p>
+        </div>
+    `;
+    const tagLittle = `
+        <div class="img-right ${classElement}">
+             <img src="${items[i]}" alt="">
+        </div>
+    `;
 
-//     itemsContainer.innerHTML += tag;
-//     thumbsContainer.innerHTML += tagThumb;
-// }
-
-
-
+    bigContainer.innerHTML += tagBig;
+    littleContainer.innerHTML += tagLittle;
+}
 
 
 

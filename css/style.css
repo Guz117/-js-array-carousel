@@ -83,6 +83,7 @@
     transform: translateX(-50%);
     color: white;
     font-size: 2em;
+    z-index: 999;
 }
 
 .fa-arrow-alt-circle-down {
@@ -92,4 +93,5 @@
     transform: translateX(-50%);
     color: white;
     font-size: 2em;
+    z-index: 999;
 }
